@@ -11,7 +11,7 @@
         <p>Форма регистрации с валидацией всех полей / Reistration form with validation of all fields</p>
     </header>
     <main>
-        <form name="form" class="form">
+        <form name="form" class="form" novalidate>
             <fieldset class="form__personalInfo">
                 <legend class="form__personalInfo_legend">Личная информация / Personal information</legend>
                 <div class="form__personalInfo_inputName">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="form__personalInfo_inputEmail">
                     <label for="userEmail">Введите электронный адрес / Enter the E-mail</label>
-                    <input type="email" placeholder="Эдектронная почта / E-mail" id="email" required/>
+                    <input type="email" placeholder="Электронная почта / E-mail" id="email" required/>
                 </div>
                 <div class="form__personalInfo_inputAge">
                     <label for="age">Введите возраст / Enter an Age</label>
@@ -30,11 +30,11 @@
                     <legend for="gender">Выбор пола / Gender identification</legend>
                     <fieldset class="">
                         <label for="male">Мужчина / Male</label>
-                        <input type="radio" value="Male" id="male">
+                        <input type="radio" name="gender" value="Male" id="male">
                         <label for="female">Женщина / Female</label>
-                        <input type="radio" value="Feale" id="female">
+                        <input type="radio" name="gender" value="Feale" id="female">
                         <label for="none">Предпочитаю скрыть / Preferably hide</label>
-                        <input type="radio" value="None" id="none">
+                        <input type="radio" name="gender" value="None" id="none">
                     </fieldset>
                 </div>
                 <div class="form__personalInfo_inputProfession">
@@ -45,7 +45,7 @@
                         <option value="coder">Программист / Software developer</option>
                         <option value="teacher">Учитель / Teacher</option>
                         <option value="desiner">Дизайнер / Desiner</option>
-                        <option value="engineer">Инжинер / Engineer</option>
+                        <option value="engineer">Инженер / Engineer</option>
                         <option value="salesman">Продавец / Salesman</option>
                         <option value="other">Другое / Other</option>
                     </select>
@@ -69,7 +69,8 @@
                     <input type="checkbox" name="agreement" value="agree" checked="checked"/>
                 </div>
             </fieldset>
-            <button>Отправить / Send</button>
+            <div class="form__button"><button class="form__button_send" type="submit" onclick=checkALL()>Отправить / Send</button></div>
+            <div id="errorsInfo"></div>
         </form>
     </main>
     <footer>
