@@ -16,19 +16,19 @@
                 <legend class="form__personalInfo_legend">Личная информация / Personal information</legend>
                 <div class="form__personalInfo_inputName">
                     <label for="name">Введите Имя и Фамилию / Enter the First and Last Name</label>
-                    <input type="text" placeholder="Имя и Фамилия / First and Last Name" id="name" required/>
+                    <input type="text" name="name" placeholder="Имя и Фамилия / First and Last Name" id="name" required>
                 </div>
                 <div class="form__personalInfo_inputEmail">
                     <label for="userEmail">Введите электронный адрес / Enter the E-mail</label>
-                    <input type="email" placeholder="Электронная почта / E-mail" id="email" required/>
+                    <input type="email" name="email" placeholder="Электронная почта / example@example.com" id="email" required>
                 </div>
                 <div class="form__personalInfo_inputAge">
                     <label for="age">Введите возраст / Enter an Age</label>
-                    <input type="number" placeholder="Возраст / Age" id="age" required/>
+                    <input type="number" name="age" placeholder="Возраст / Age" id="age" required>
                 </div>
                 <div class="form__personalInfo_inputGender">
                     <legend for="gender">Выбор пола / Gender identification</legend>
-                    <fieldset class="">
+                    <fieldset class="gender" required>
                         <label for="male">Мужчина / Male</label>
                         <input type="radio" name="gender" value="Male" id="male">
                         <label for="female">Женщина / Female</label>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form__personalInfo_inputProfession">
                     <label for="professionSelect">Выбор профессии из списка / Select a Profession from the list</label>
-                    <select name="profession" id="professionSelect">
+                    <select name="profession" id="professionSelect" required>
                         <option value="">--Выберите профессию / Select a Profession--</option>
                         <option value="doctor">Врач / Doctor</option>
                         <option value="coder">Программист / Software developer</option>
@@ -57,19 +57,21 @@
                     <label for="password">Ввод пароля / Enter the Password</label>
                     <input 
                         type="password" 
+                        name="password"
                         placeholder="В пароле минимум: 8 символов, 1 заглавная буква, 1 строчная буква, 1 цифа / Password must be at list: 8 characters, 1 uppercase letters, 1 lowercase letter, 1 number"
                         id="password"
                         minlength="8"
-                        maxlength="20"/>
+                        maxlength="20"
+                        required>
                 </div>
             </fieldset>
             <fieldset class="form__agreement">
                 <legend class="form__agreement_legend">Согласие с обработкой личных данных / Agreement to the processing of personal data</legend>
                 <div>
-                    <input type="checkbox" name="agreement" value="agree" checked="checked"/>
+                    <input type="checkbox" name="agreement" id="agreement" value="agree" checked="checked" required>
                 </div>
             </fieldset>
-            <div class="form__button"><button class="form__button_send" type="submit" onclick=checkALL()>Отправить / Send</button></div>
+            <div class="form__button"><button class="form__button_send" id="submit-btn" type="submit" onclick=checkAll()>Отправить / Send</button></div>
             <div id="errorsInfo"></div>
         </form>
     </main>

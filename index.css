@@ -1,3 +1,109 @@
-input:valid {
-    border-color: aquamarine;
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Стили для формы */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    position: relative;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Стили для полей ввода */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Стили для радиокнопок и чекбоксов */
+.gender label,
+.agreement label {
+    margin-right: 10px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Кнопка отправки */
+.form__button {
+    display: flex;
+    justify-content: center;
+}
+
+.form__button_send {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form__button_send:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для состояния фокуса */
+.focused {
+    border-color: #007BFF;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
 }
